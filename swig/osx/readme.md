@@ -14,7 +14,7 @@
     1. Note: You don't need to do the final step `make install` i.e. you don't need to install the library on the machine as we only need the dynamic library file
     2. In the following steps it's assumed you cloned the libpostal git repo into a folder called `libpostal`
 3. Copy the following files to the `swig/osx/cppfiles` folder in this repo
-    1. `libpostal/src/.libs/libpostal.a`
+    1. `libpostal/src/.libs/libpostal.1.dylib`
 4. Copy the following file to the `swig/` folder in this repo
     1. `libpostal/src/libpostal.h`
 5. Copy the contents of the configured libpostal `--datadir` to `/src/DotNetPostal/libpostaldata/`
