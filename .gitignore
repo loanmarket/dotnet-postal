@@ -348,3 +348,14 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+/swig/**/cppfiles/libpostal.i
+/swig/**/cppfiles/libpostal.h
+/swig/**/cppfiles/libpostal_wrap.c
+/swig/**/cppfiles/libpostal_wrap.o
+/swig/**/cppfiles/libpostal.1.dylib
+/swig/**/cppfiles/libpostal.dylib
+/swig/**/cppfiles/libpostal-1.dll
+/swig/**/cppfiles/libpostal.dll
+/swig/**/cppfiles/libpostal.so.1
+/swig/**/cppfiles/libpostal.so
