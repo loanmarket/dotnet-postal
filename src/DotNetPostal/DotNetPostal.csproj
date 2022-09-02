@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="libpostaldata\**">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Include="libpostal-1.dll" Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Include="libpostal.dll" Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+         <None Include="libpostal.1.dylib" Condition="$([MSBuild]::IsOSPlatform('OSX'))">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Include="libpostal.dylib" Condition="$([MSBuild]::IsOSPlatform('OSX'))">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Include="libpostal.so.1" Condition="$([MSBuild]::IsOSPlatform('Linux'))">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Include="libpostal.so" Condition="$([MSBuild]::IsOSPlatform('Linux'))">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+</Project>
