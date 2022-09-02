@@ -12,6 +12,8 @@ Things to note:
   * For Windows it requires Universal C Runtime - this is present for Windows 10+ but needs to be installed manually for editions of Windows prior to 10
 * Currently does not support ARM
   * Possible to add this through a PR though...
+* To use this library you need the libpostal trained data - that can't be included in the repo due to github repo file size limitations
+  * A solution for obtaining this data will be delivered soon...watch this space!
 
 ## Building native libraries
 
