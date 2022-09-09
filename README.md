@@ -13,7 +13,13 @@ Things to note:
   * For Windows it requires Universal C Runtime - this is present for Windows 10+ but needs to be installed manually for editions of Windows prior to 10
 * Currently does not support ARM
 * To use this library you need the libpostal trained data - that can't be included in the repo due to github repo file size limitations
-  * A solution for obtaining this data will be delivered soon...watch this space!
+
+## Downloading libpostal Trained Model Data
+
+1. Download the [trained model data](https://github.com/loanmarket/dotnet-postal/releases/download/dotnet-postal-data-v1.0.0/libpostaldata.zip) - note that this is ~800MB download, and then ~2GB unzipped
+2. Move the file to this repo's root and __unzip__ it
+3. Open a terminal in the repo root and run `./install_libpostal_data.sh`
+   1. This copies the data to the two test projects, which include it as content in their csproj files
 
 ## Building
 
