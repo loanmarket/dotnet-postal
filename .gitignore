@@ -361,3 +361,4 @@ MigrationBackup/
 /swig/**/cppfiles/libpostal.so
 /src/DotNetPostal/libpostaldata/*
 /tests/**/libpostaldata/*
+!package-feed/*.nupkg

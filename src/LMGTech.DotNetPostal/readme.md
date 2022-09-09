@@ -14,16 +14,21 @@ Things to note:
 
 ## Installing LMGTech.DotNetPostal
 
-It's likely you've already done the first step by adding the LMGTech.DotNetPostal package to project in your solution. If so, skip that step.
+It's likely you've already done the first step by adding the LMGTech.DotNetPostal package to a project in your solution. If so, skip that step.
 
 1. Add the `LMGTech.DotNetPostal` nuget package to a project in your solution by either using your IDE package manager, or running `dotnet add package LMGTech.DotNetPostal` from the command prompt in your project's csproj directory
-   1. During installation your project's csproj file is updated with:
-      1. Information about how to include OS-specific native binaries for libpostal and rules to copy them during build
-      2. Information about how to include the `libpostaldata` directory and how to copy the contents during build
 2. Download the libpostal trained model data from https://github.com/loanmarket/dotnet-postal/releases/download/dotnet-postal-data-v1.0.0/libpostaldata.zip ~800MB compressed
 3. Extract the zipped file into the root directory of the project where you installed LMGTech.DotNetPostal
    1. This should create a folder called `libpostaldata` with the contents containing the trained model data
-4. You should now be able to build your project and have the LMGTech.DotNetPostal.dll and trained model data copied to the bin folder
+4. Edit your project's csproj file to ensure the `libpostaldata` directory is marked as content by adding the following section
+```
+    <ItemGroup>
+        <Content Include="libpostaldata\**">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+```
+5. You should now be able to build your project and have the LMGTech.DotNetPostal.dll, native binaries, and trained model data copied to the bin folder
 
 ## Using LMGTech.DotNetPostal
 
