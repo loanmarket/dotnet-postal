@@ -16,12 +16,14 @@ Things to note:
 
 ## Downloading libpostal Trained Model Data
 
-### Linux/MacOS
+For Windows, you need to ensure you have a bash shell available - Git for Windows includes one, WSL2 also has this ability etc.
 
-1. Open in the repo root and run `./install_libpostal_data.sh`, which will
+1. Open a terminal that supports bash in the root directory where you have cloned this repository
+2. Run `./install_libpostal_data.sh`, which will
    1. Download the [trained model data](https://github.com/loanmarket/dotnet-postal/releases/download/dotnet-postal-data-v1.0.0/libpostaldata.zip)
    2. Unzip the file
    3. Copy the data to the two test projects, which include it as content in their csproj files
+   4. Remove the downloaded zip file and extracted folder
 
 ### Windows
 
