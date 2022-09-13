@@ -25,10 +25,6 @@ For Windows, you need to ensure you have a bash shell available - Git for Window
    3. Copy the data to the two test projects, which include it as content in their csproj files
    4. Remove the downloaded zip file and extracted folder
 
-### Windows
-
-TODO
-
 ## Building
 
 Compiled native libraries for libpostal for Windows/MacOS/Linux with SWIG wrapper entry points are included in this repo. To build simply open the solution and build.
