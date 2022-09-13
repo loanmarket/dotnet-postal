@@ -16,10 +16,16 @@ Things to note:
 
 ## Downloading libpostal Trained Model Data
 
-1. Download the [trained model data](https://github.com/loanmarket/dotnet-postal/releases/download/dotnet-postal-data-v1.0.0/libpostaldata.zip) - note that this is ~800MB download, and then ~2GB unzipped
-2. Move the file to this repo's root and __unzip__ it
-3. Open a terminal in the repo root and run `./install_libpostal_data.sh`
-   1. This copies the data to the two test projects, which include it as content in their csproj files
+### Linux/MacOS
+
+1. Open in the repo root and run `./install_libpostal_data.sh`, which will
+   1. Download the [trained model data](https://github.com/loanmarket/dotnet-postal/releases/download/dotnet-postal-data-v1.0.0/libpostaldata.zip)
+   2. Unzip the file
+   3. Copy the data to the two test projects, which include it as content in their csproj files
+
+### Windows
+
+TODO
 
 ## Building
 
