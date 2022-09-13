@@ -5,7 +5,7 @@ curl -L https://github.com/loanmarket/dotnet-postal/releases/download/dotnet-pos
 
 unzip libpostaldata.zip
 
-cp -rf libpostaldata tests/LMGTech.DotNetPostal.Nuget.Tests
+cp -rf libpostaldata tests/LMGTech.DotNetPostal.NuGet.Tests
 cp -rf libpostaldata tests/LMGTech.DotNetPostal.Tests
 rm -r libpostaldata
 rm libpostaldata.zip
