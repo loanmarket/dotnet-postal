@@ -18,6 +18,7 @@ namespace LMGTech.DotNetPostal.Models
             public const string Suburb = "suburb";
             public const string CityDistrict = "city_district";
             public const string City = "city";
+            public const string RuralDeliveryNumber = "rd_number";
             public const string Island = "island";
             public const string StateDistrict = "state_district";
             public const string State = "state";

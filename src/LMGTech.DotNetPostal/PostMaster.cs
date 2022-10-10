@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using LMGTech.DotNetPostal.Models;
 
 namespace LMGTech.DotNetPostal
@@ -9,6 +10,7 @@ namespace LMGTech.DotNetPostal
     {
         private static bool _isInitialised;
         private static readonly object Padlock = new object();
+        private const string RuralDeliveryRegex = @"(\s|,)\s*(R|r)(d|D){1}\s+\d+\w?(\s|,)";
 
         public static bool IsInitialised => _isInitialised;
 
@@ -50,6 +52,16 @@ namespace LMGTech.DotNetPostal
             if (_isInitialised)
             {
                 var parserOptions = LibPostal.libpostal_get_address_parser_default_options();
+
+                // libpostal can't handle NZ rural delivery numbers at present...
+                string ruralDeliveryNumber = null;
+                if (Regex.IsMatch(address, RuralDeliveryRegex))
+                {
+                    var match = Regex.Match(address, RuralDeliveryRegex);
+                    ruralDeliveryNumber = match.Value.Replace(",", string.Empty).Trim();
+                    address = Regex.Replace(address, RuralDeliveryRegex, string.Empty);
+                }
+                
                 var parsedAddress = LibPostal.libpostal_parse_address(address, parserOptions);
 
                 if (parsedAddress != null)
@@ -62,6 +74,11 @@ namespace LMGTech.DotNetPostal
                         {
                             addressParts.Add(new AddressPart(addressLabel.Value, parsedAddress.component_get(i)));
                         }
+                    }
+
+                    if (ruralDeliveryNumber != null)
+                    {
+                        addressParts.Add(new AddressPart(AddressLabel.RuralDeliveryNumber, ruralDeliveryNumber));
                     }
 
                     return new Address(addressParts);
