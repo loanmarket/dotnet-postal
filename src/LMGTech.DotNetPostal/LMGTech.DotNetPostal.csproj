@@ -7,7 +7,7 @@
         <AssemblyName>LMGTech.DotNetPostal</AssemblyName>
         <RootNamespace>LMGTech.DotNetPostal</RootNamespace>
         <PackageId>LMGTech.DotNetPostal</PackageId>
-        <Version>1.0.0</Version>
+        <Version>1.1.0</Version>
         <Authors>LMG Tech</Authors>
         <Company>Loan Market Group</Company>
         <Title>DotNetPostal - .NET bindings for libpostal</Title>

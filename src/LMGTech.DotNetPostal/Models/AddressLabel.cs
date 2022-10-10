@@ -16,6 +16,7 @@ namespace LMGTech.DotNetPostal.Models
         Suburb,
         CityDistrict,
         City,
+        RuralDeliveryNumber,
         Island,
         StateDistrict,
         State,
